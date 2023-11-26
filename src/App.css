@@ -1,38 +1,31 @@
+/*
+todo: load these in preprocessing
+--slate-gray: #687C9Aff;
+--cool-gray: #8289A0ff;
+--jet: #47434Bff;
+--davys-gray: #555062ff;
+--glaucous: #5C6F96ff;
+*/
 .App {
-  text-align: center;
+  background-color: #5C6F96ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bio-blurb {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img-card {
+  padding: 20px 20px 20px 20px;
+  margin: 20px;
+  border-radius: 3px;
+  background-color: rgb(18, 37, 64);
+  box-shadow: 10px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
 }
