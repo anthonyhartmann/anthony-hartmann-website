@@ -2,56 +2,82 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Spacer from "./components/Spacer";
 import LogoCard from "./components/LogoCard/LogoCard";
-import { Col, Collapse, Container, Row, Image } from "react-bootstrap";
+import {
+  Col,
+  Collapse,
+  Container,
+  Row,
+  Image,
+  Card,
+  Toast,
+  ToastContainer,
+} from "react-bootstrap";
 import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Check,
+  EnvelopeHeart,
+  FileEarmarkPersonFill,
+  Github,
+  Linkedin,
+} from "react-bootstrap-icons";
 import {
   BIO_BLURB,
   DOORDASH_DESC,
   FABRIC_DESC,
   IK_DESC,
   MARQETA_DESC,
+  META_DESC,
   MINDSWARMS_DESC,
+  TAROT_DESC,
 } from "./strings";
 import CollapseBlurb from "./components/CollapseBlurb/CollapseBlurb";
 
 function App() {
-  const [open, setOpen] = React.useState(false);
-  // TODO: use less state variables
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
-  const [collapse2Open, setCollapse2Open] = React.useState(false);
   const [collapseImage, setCollapseImage] = React.useState("");
   const [collapseText, setCollapseText] = React.useState("");
-  const [collapseIndex, setCollapseIndex] = React.useState(-1);
+  const [collapseIndex, setCollapseIndex] = React.useState<number>(-1);
+  const [show, setShow] = React.useState(false);
+
+  console.log("hi");
+  console.log(show);
 
   const handleOpenCollapse = (
     index: number,
     imagePath: string,
     collapseText: string
   ) => {
-    if (index < 3) {
-      setCollapseOpen(index != collapseIndex);
-      setCollapse2Open(false);
-    } else {
-      setCollapse2Open(index != collapseIndex);
-      setCollapseOpen(false);
-    }
+    setCollapseIndex(index == collapseIndex ? -1 : index);
     setCollapseImage(imagePath);
     setCollapseText(collapseText);
-    setCollapseIndex(index == collapseIndex ? -1 : index);
   };
 
   return (
     <div className="App">
+      <ToastContainer
+        position="top-end"
+        style={{ position: "fixed", margin: "10px" }}
+      >
+        <Toast
+          style={{
+            backgroundColor: "mediumseagreen",
+            zIndex: "2",
+          }}
+          onClose={() => setShow(false)}
+          show={show}
+          delay={2000}
+          autohide
+        >
+          <Toast.Body style={{ fontSize: "1.1em" }}>
+            <Check size={30} color="#076620" style={{ margin: "0 6 2 0" }} />
+            Email copied to clipboard.
+          </Toast.Body>
+        </Toast>
+      </ToastContainer>
       <NavBar />
       {/* TODO: find a more BootStrap-thonic way of doing this */}
       <Container fluid style={{ margin: 0, padding: 0 }}>
-        <Row
-          className="row justify-content-center"
-          style={{
-            backgroundColor: "rgb(18, 37, 64)",
-            backgroundSize: "cover",
-          }}
-        >
+        <Row className="row justify-content-center">
           <Spacer size={8} />
           <Col xl={4} className="bio-blurb">
             <h1 className="display-1">Hi, I'm Anthony.</h1>
@@ -66,9 +92,8 @@ function App() {
               style={{ maxWidth: "80%" }}
             />
           </Col>
-          <Spacer size={8} />
+          <Spacer size={6} />
         </Row>
-        <Spacer size={1} />
         <Row className="row justify-content-center">
           <Col xl={3}>
             <h1 style={{ textAlign: "center" }} id="experience">
@@ -76,6 +101,7 @@ function App() {
             </h1>
           </Col>
         </Row>
+        <Spacer size={1} />
         <Row className="row justify-content-center">
           <Col lg={3}>
             <LogoCard
@@ -115,7 +141,7 @@ function App() {
           </Col>
         </Row>
         <CollapseBlurb
-          in={collapseOpen}
+          in={-1 < collapseIndex && collapseIndex <= 2}
           imagePath={collapseImage}
           blurbText={collapseText}
         />
@@ -142,23 +168,105 @@ function App() {
           </Col>
         </Row>
         <CollapseBlurb
-          in={collapse2Open}
+          in={3 <= collapseIndex && collapseIndex < 5}
           imagePath={collapseImage}
           blurbText={collapseText}
         />
-        <Spacer size={2} />
+
+        <Spacer size={4} />
         <Row>
           <h1 id="projects" className="text-center">
             Projects
           </h1>
         </Row>
-        <Spacer size={2} />
+        <Spacer size={3} />
+        <Row className="row justify-content-center">
+          <Col lg={3}>
+            <Card
+              onClick={() =>
+                handleOpenCollapse(5, "/images/tarot.png", TAROT_DESC)
+              }
+            >
+              <Card.Img variant="top" src="/images/tarot.png" />
+              <Card.Text
+                style={{
+                  backgroundColor: "white",
+                  color: "black",
+                  paddingLeft: "0.5em",
+                }}
+              >
+                Tarot Tutor (Working Title)
+              </Card.Text>
+            </Card>
+          </Col>
+          <Col lg={3}>
+            <Card
+              onClick={() =>
+                handleOpenCollapse(6, "/images/meta.png", META_DESC)
+              }
+            >
+              <Card.Img variant="top" src="/images/meta.png" />
+              <Card.Text
+                style={{
+                  backgroundColor: "white",
+                  color: "black",
+                  paddingLeft: "0.5em",
+                }}
+              >
+                This website!
+              </Card.Text>
+            </Card>
+          </Col>
+        </Row>
+        <CollapseBlurb
+          in={5 <= collapseIndex && collapseIndex <= 6}
+          wide={true}
+          imagePath={collapseImage}
+          blurbText={collapseText}
+        />
+        <Spacer size={4} />
         <Row>
           <h1 id="links" className="text-center">
             Links
           </h1>
         </Row>
-        <Spacer size={2} />
+        <Spacer size={1} />
+        <Row className="row justify-content-center">
+          <Col lg={1} className="d-flex justify-content-center">
+            <Link
+              to="https://github.com/anthonyhartmann/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#ffffff" }}
+            >
+              <Github size={96} />
+            </Link>
+          </Col>
+          <Col
+            lg={1}
+            className="d-flex justify-content-center"
+            onClick={() => {
+              navigator.clipboard.writeText("anthonyhartmann395@gmail.com");
+              setShow(true);
+            }}
+          >
+            <EnvelopeHeart size={96} />
+          </Col>
+          <Col lg={1} className="d-flex justify-content-center">
+            <Link
+              to="https://github.com/anthonyhartmann/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#ffffff" }}
+            >
+              <Linkedin size={96} />
+            </Link>
+          </Col>
+          <Col lg={1} className="d-flex justify-content-center">
+            <FileEarmarkPersonFill size={96} />
+          </Col>
+        </Row>
+        <Spacer size={3} />
       </Container>
     </div>
   );

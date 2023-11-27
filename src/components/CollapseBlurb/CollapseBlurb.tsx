@@ -6,6 +6,7 @@ type CollapseBlurbProps = {
   in: boolean;
   imagePath: string;
   blurbText: string;
+  wide?: boolean;
 };
 
 const CollapseBlurb: React.FC<CollapseBlurbProps> = (props) => {
@@ -19,7 +20,7 @@ const CollapseBlurb: React.FC<CollapseBlurbProps> = (props) => {
               <Image fluid src={props.imagePath} />
             </Col>
             <Col md={1} />
-            <Col xl={3}>
+            <Col xl={props.wide ? 7 : 3}>
               <p className="bio-blurb">{props.blurbText}</p>
             </Col>
             <Spacer size={1} />
@@ -28,6 +29,10 @@ const CollapseBlurb: React.FC<CollapseBlurbProps> = (props) => {
       </div>
     </Collapse>
   );
+};
+
+CollapseBlurb.defaultProps = {
+  wide: false,
 };
 
 export default CollapseBlurb;
