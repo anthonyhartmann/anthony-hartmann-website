@@ -5,7 +5,8 @@ type SpacerProps = {
 };
 
 const Spacer: React.FC<SpacerProps> = (props) => {
-  return <div className="row mb-5" style={{ height: "1em" }} />;
+  const cssSize = props.size.toString() + "em";
+  return <div className="row mb-5" style={{ height: cssSize }} />;
 };
 
 export default Spacer;

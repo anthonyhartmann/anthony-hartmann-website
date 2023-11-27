@@ -1,8 +1,8 @@
 // change the theme
 $theme-colors: (
   "primary": #122540,
-  "secondary": #687C9Aff,
-  "tertiary": #47434Bff
+  "secondary": #0c1a2c,
+  "tertiary": #47434bff,
 );
 
 /*
@@ -15,4 +15,4 @@ todo: load these in preprocessing
 */
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
