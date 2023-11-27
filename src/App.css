@@ -1,31 +1,9 @@
-/*
-todo: load these in preprocessing
---slate-gray: #687C9Aff;
---cool-gray: #8289A0ff;
---jet: #47434Bff;
---davys-gray: #555062ff;
---glaucous: #5C6F96ff;
-*/
 .App {
-  background-color: #5C6F96ff;
+  background-color: #5c6f96ff;
 }
 
 .bio-blurb {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
-}
-
-.img-card {
-  padding: 20px 20px 20px 20px;
-  margin: 20px;
-  border-radius: 3px;
-  background-color: rgb(18, 37, 64);
-  box-shadow: 10px 10px;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  box-sizing: content-box;
 }

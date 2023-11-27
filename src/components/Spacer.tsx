@@ -1,18 +1,11 @@
-import React from 'react'
+import React from "react";
 
 type SpacerProps = {
-    size: number
-  }
+  size: number;
+};
 
 const Spacer: React.FC<SpacerProps> = (props) => {
-    const output = Array(props.size).fill(0).map((num) => (
-        <div className="row mb-5"/>
-    ))
-    return (
-      <div>
-        {output}
-      </div>
-    )
-}
+  return <div className="row mb-5" style={{ height: "1em" }} />;
+};
 
-export default Spacer
+export default Spacer;
