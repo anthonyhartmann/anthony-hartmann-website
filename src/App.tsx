@@ -94,88 +94,110 @@ function App() {
           </Col>
           <Spacer size={6} />
         </Row>
-        <Row className="row justify-content-center">
-          <Col xl={3}>
-            <h1 style={{ textAlign: "center" }} id="experience">
-              Experience
-            </h1>
-          </Col>
-        </Row>
-        <Spacer size={1} />
-        <Row className="row justify-content-center">
-          <Col lg={3}>
-            <LogoCard
-              src="/images/fabric-logo-black.svg"
-              onClick={() =>
-                handleOpenCollapse(
-                  0,
-                  "/images/fabric-logo-black.svg",
-                  FABRIC_DESC
-                )
-              }
-            />
-          </Col>
-          <Col lg={3}>
-            <LogoCard
-              src="/images/doordash-logo.svg"
-              onClick={() =>
-                handleOpenCollapse(
-                  1,
-                  "/images/doordash-logo.svg",
-                  DOORDASH_DESC
-                )
-              }
-            />
-          </Col>
-          <Col lg={3}>
-            <LogoCard
-              src="/images/interview-kickstart-logo.svg"
-              onClick={() =>
-                handleOpenCollapse(
-                  2,
-                  "/images/interview-kickstart-logo.svg",
-                  IK_DESC
-                )
-              }
-            />
-          </Col>
-        </Row>
-        <CollapseBlurb
-          in={-1 < collapseIndex && collapseIndex <= 2}
-          imagePath={collapseImage}
-          blurbText={collapseText}
-        />
-        <Row className="row justify-content-center">
-          <Col lg={3}>
-            <LogoCard
-              src="/images/mindswarms.svg"
-              onClick={() =>
-                handleOpenCollapse(3, "/images/mindswarms.svg", MINDSWARMS_DESC)
-              }
-            />
-          </Col>
-          <Col lg={3}>
-            <LogoCard
-              src="/images/primary-logo-white.svg"
-              onClick={() =>
-                handleOpenCollapse(
-                  4,
-                  "/images/primary-logo-white.svg",
-                  MARQETA_DESC
-                )
-              }
-            />
-          </Col>
-        </Row>
-        <CollapseBlurb
-          in={3 <= collapseIndex && collapseIndex < 5}
-          imagePath={collapseImage}
-          blurbText={collapseText}
-        />
-
+        <div
+          style={{
+            backgroundColor: "#73FAC9",
+            color: "black",
+            paddingBottom: "10em",
+          }}
+        >
+          <Spacer size={1} />
+          <Row className="row justify-content-center">
+            <Col xl={12}>
+              <h1
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+                id="experience"
+              >
+                Experience
+              </h1>
+            </Col>
+          </Row>
+          <Spacer size={1} />
+          <Row className="row justify-content-center">
+            <Col lg={3}>
+              <LogoCard
+                src="/images/fabric-logo-black.svg"
+                onClick={() =>
+                  handleOpenCollapse(
+                    0,
+                    "/images/fabric-logo-black.svg",
+                    FABRIC_DESC
+                  )
+                }
+              />
+            </Col>
+            <Col lg={3}>
+              <LogoCard
+                src="/images/doordash-logo.svg"
+                onClick={() =>
+                  handleOpenCollapse(
+                    1,
+                    "/images/doordash-logo.svg",
+                    DOORDASH_DESC
+                  )
+                }
+              />
+            </Col>
+            <Col lg={3}>
+              <LogoCard
+                src="/images/interview-kickstart-logo.svg"
+                onClick={() =>
+                  handleOpenCollapse(
+                    2,
+                    "/images/interview-kickstart-logo.svg",
+                    IK_DESC
+                  )
+                }
+              />
+            </Col>
+          </Row>
+          <CollapseBlurb
+            in={-1 < collapseIndex && collapseIndex <= 2}
+            imagePath={collapseImage}
+            blurbText={collapseText}
+          />
+          <Row className="row justify-content-center">
+            <Col lg={3}>
+              <LogoCard
+                src="/images/mindswarms.svg"
+                onClick={() =>
+                  handleOpenCollapse(
+                    3,
+                    "/images/mindswarms.svg",
+                    MINDSWARMS_DESC
+                  )
+                }
+              />
+            </Col>
+            <Col lg={3}>
+              <LogoCard
+                src="/images/primary-logo-white.svg"
+                onClick={() =>
+                  handleOpenCollapse(
+                    4,
+                    "/images/primary-logo-white.svg",
+                    MARQETA_DESC
+                  )
+                }
+              />
+            </Col>
+          </Row>
+          <CollapseBlurb
+            in={3 <= collapseIndex && collapseIndex < 5}
+            imagePath={collapseImage}
+            blurbText={collapseText}
+          />
+        </div>
         <Spacer size={4} />
         <Row>
-          <h1 id="projects" className="text-center">
+          <h1
+            id="projects"
+            className="text-center"
+            style={{ fontWeight: "bold" }}
+          >
             Projects
           </h1>
         </Row>
@@ -225,48 +247,61 @@ function App() {
           blurbText={collapseText}
         />
         <Spacer size={4} />
-        <Row>
-          <h1 id="links" className="text-center">
-            Links
-          </h1>
-        </Row>
-        <Spacer size={1} />
-        <Row className="row justify-content-center">
-          <Col lg={1} className="d-flex justify-content-center">
-            <Link
-              to="https://github.com/anthonyhartmann/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#ffffff" }}
+
+        <div
+          style={{
+            backgroundColor: "#73FAC9",
+            color: "black",
+            paddingBottom: "10em",
+          }}
+        >
+          <Spacer size={1} />
+          <Row>
+            <h1
+              id="links"
+              className="text-center"
+              style={{ fontWeight: "bold" }}
             >
-              <Github size={96} />
-            </Link>
-          </Col>
-          <Col
-            lg={1}
-            className="d-flex justify-content-center"
-            onClick={() => {
-              navigator.clipboard.writeText("anthonyhartmann395@gmail.com");
-              setShow(true);
-            }}
-          >
-            <EnvelopeHeart size={96} />
-          </Col>
-          <Col lg={1} className="d-flex justify-content-center">
-            <Link
-              to="https://github.com/anthonyhartmann/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#ffffff" }}
+              Links
+            </h1>
+          </Row>
+          <Spacer size={1} />
+          <Row className="row justify-content-center">
+            <Col lg={1} className="d-flex justify-content-center">
+              <Link
+                to="https://github.com/anthonyhartmann/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#ffffff" }}
+              >
+                <Github size={96} />
+              </Link>
+            </Col>
+            <Col
+              lg={1}
+              className="d-flex justify-content-center"
+              onClick={() => {
+                navigator.clipboard.writeText("anthonyhartmann395@gmail.com");
+                setShow(true);
+              }}
             >
-              <Linkedin size={96} />
-            </Link>
-          </Col>
-          <Col lg={1} className="d-flex justify-content-center">
-            <FileEarmarkPersonFill size={96} />
-          </Col>
-        </Row>
-        <Spacer size={3} />
+              <EnvelopeHeart size={96} />
+            </Col>
+            <Col lg={1} className="d-flex justify-content-center">
+              <Link
+                to="https://github.com/anthonyhartmann/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#ffffff" }}
+              >
+                <Linkedin size={96} />
+              </Link>
+            </Col>
+            <Col lg={1} className="d-flex justify-content-center">
+              <FileEarmarkPersonFill size={96} />
+            </Col>
+          </Row>
+        </div>
       </Container>
     </div>
   );
