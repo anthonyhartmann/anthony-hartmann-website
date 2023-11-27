@@ -5,18 +5,13 @@ import Card from "react-bootstrap/Card";
 
 type LogoCardProps = {
   src: string;
+  onClick?: any;
 };
 
 const LogoCard: React.FC<LogoCardProps> = (props) => {
-  const [showModal, setShowModal] = React.useState<boolean>(false);
   return (
     <div>
-      {showModal && <div className="modal">{IPSUM}</div>}
-      <Card
-        bg={"primary"}
-        className="img-card"
-        onClick={() => setShowModal(!showModal)}
-      >
+      <Card bg={"secondary"} className="img-card" onClick={props.onClick}>
         <Card.Body>
           <Card.Img className="img-responsive" src={props.src} />
         </Card.Body>
