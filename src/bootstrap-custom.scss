@@ -5,6 +5,14 @@ $theme-colors: (
   "tertiary": #47434bff,
 );
 
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+:root {
+  --bs-body-color: #ffffff;
+  --bs-body-bg: #112540;
+}
+
 /*
 todo: load these in preprocessing
 --slate-gray: #687C9Aff;
@@ -13,6 +21,3 @@ todo: load these in preprocessing
 --davys-gray: #555062ff;
 --glaucous: #5C6F96ff;
 */
-
-// Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
