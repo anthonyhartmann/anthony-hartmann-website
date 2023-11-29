@@ -10,3 +10,44 @@
   margin: 0;
   padding: 0;
 }
+
+.envHeart {
+  transition: color 0.5s ease;
+  color: white;
+}
+
+.envHeart:hover {
+  color: #ff0000;
+}
+
+.envHeart {
+  transition: color 0.5s ease;
+  color: white;
+}
+
+.github {
+  transition: color 0.5s ease;
+}
+
+.github:hover {
+  color: #000000;
+}
+
+.linkedin {
+  transition: color 0.5s ease;
+}
+
+.linkedin:hover {
+  color: #0077b5;
+  transition: color 0.5s ease;
+}
+
+.resume {
+  transition: color 0.5s ease;
+  color: white;
+}
+
+.resume:hover {
+  color: gold;
+  transition: color 0.5s ease;
+}

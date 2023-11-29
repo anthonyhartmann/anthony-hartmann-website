@@ -34,6 +34,15 @@ import {
 import CollapseBlurb from "./components/CollapseBlurb/CollapseBlurb";
 
 function App() {
+  const collapseRanges: Map<number, number> = new Map<number, number>([
+    [0, 0],
+    [1, 0],
+    [2, 0],
+    [3, 1],
+    [4, 1],
+    [5, 2],
+    [6, 2],
+  ]);
   const [collapseImage, setCollapseImage] = React.useState("");
   const [collapseText, setCollapseText] = React.useState("");
   const [collapseIndex, setCollapseIndex] = React.useState<number>(-1);
@@ -47,9 +56,9 @@ function App() {
     imagePath: string,
     collapseText: string
   ) => {
-    setCollapseIndex(index == collapseIndex ? -1 : index);
-    setCollapseImage(imagePath);
-    setCollapseText(collapseText);
+      setCollapseIndex(index == collapseIndex ? -1 : index);
+      setCollapseImage(imagePath);
+      setCollapseText(collapseText);
   };
 
   return (
@@ -274,7 +283,7 @@ function App() {
                 rel="noopener noreferrer"
                 style={{ color: "#ffffff" }}
               >
-                <Github size={96} />
+                <Github size={96} className="github" />
               </Link>
             </Col>
             <Col
@@ -285,7 +294,7 @@ function App() {
                 setShow(true);
               }}
             >
-              <EnvelopeHeart size={96} />
+              <EnvelopeHeart size={96} className="envHeart" />
             </Col>
             <Col lg={1} className="d-flex justify-content-center">
               <Link
@@ -294,11 +303,11 @@ function App() {
                 rel="noopener noreferrer"
                 style={{ color: "#ffffff" }}
               >
-                <Linkedin size={96} />
+                <Linkedin size={96} className="linkedin" />
               </Link>
             </Col>
             <Col lg={1} className="d-flex justify-content-center">
-              <FileEarmarkPersonFill size={96} />
+              <FileEarmarkPersonFill size={96} className="resume" />
             </Col>
           </Row>
         </div>
