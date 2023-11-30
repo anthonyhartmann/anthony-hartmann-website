@@ -46,10 +46,8 @@ function App() {
   const [collapseImage, setCollapseImage] = React.useState("");
   const [collapseText, setCollapseText] = React.useState("");
   const [collapseIndex, setCollapseIndex] = React.useState<number>(-1);
-  const [show, setShow] = React.useState(false);
-
-  console.log("hi");
-  console.log(show);
+  const [showToast, setShowToast] = React.useState(false);
+  const [toastMsg, setToastMsg] = React.useState("");
 
   const handleOpenCollapse = (
     index: number,
@@ -72,14 +70,14 @@ function App() {
             backgroundColor: "mediumseagreen",
             zIndex: "2",
           }}
-          onClose={() => setShow(false)}
-          show={show}
+          onClose={() => setShowToast(false)}
+          show={showToast}
           delay={2000}
           autohide
         >
           <Toast.Body style={{ fontSize: "1.1em" }}>
             <Check size={30} color="#076620" style={{ margin: "0 6 2 0" }} />
-            Email copied to clipboard.
+            {toastMsg}
           </Toast.Body>
         </Toast>
       </ToastContainer>
@@ -95,7 +93,7 @@ function App() {
           <Col xl={1} />
           <Col xl={4}>
             <img
-              src="/images/skele.jpeg"
+              src="/images/headshot.jpeg"
               className="rounded float-right"
               alt="Responsive image"
               style={{ maxWidth: "80%" }}
@@ -291,7 +289,8 @@ function App() {
               className="d-flex justify-content-center"
               onClick={() => {
                 navigator.clipboard.writeText("anthonyhartmann395@gmail.com");
-                setShow(true);
+                setToastMsg("Email copied successfully.")
+                setShowToast(true);
               }}
             >
               <EnvelopeHeart size={96} className="envHeart" />
@@ -306,8 +305,13 @@ function App() {
                 <Linkedin size={96} className="linkedin" />
               </Link>
             </Col>
-            <Col lg={1} className="d-flex justify-content-center">
-              <FileEarmarkPersonFill size={96} className="resume" />
+            <Col lg={1} className="d-flex justify-content-center" onClick={() => {
+                setToastMsg("Resume Downloaded Successfully")
+                setShowToast(true);
+              }}>
+              <Link to="/files/resume.pdf" target="_blank" download>
+                <FileEarmarkPersonFill size={96} className="resume" />
+              </Link>
             </Col>
           </Row>
         </div>
