@@ -11,7 +11,7 @@ type LogoCardProps = {
 const LogoCard: React.FC<LogoCardProps> = (props) => {
   return (
     <div>
-      <Card bg={"secondary"} className="img-card" onClick={props.onClick}>
+      <Card bg={"primary"} className="img-card" onClick={props.onClick}>
         <Card.Body>
           <Card.Img className="img-responsive" src={props.src} />
         </Card.Body>

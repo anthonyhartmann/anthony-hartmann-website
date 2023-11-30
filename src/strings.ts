@@ -33,7 +33,7 @@ export const IK_DESC: string = `Interview Tutor/Lecturer
 • Conducted over 300 mock interviews to help existing SWEs achieve their desired career goals.
 • Teach a monthly live class, keeping students engaged through a four hour lecture.
 • Planned and developed the content for a one month crash course on Fullstack Engineering.`;
-export const BIO_BLURB: string = `Creating a multiline string in TypeScript can be important for you when working with complex text formatting and display. TypeScript is a superset of JavaScript that enables an easier way to manage multiline strings with its capabilities.`;
+export const BIO_BLURB: string = `I'm a Full Stack Software Engineer with a wide range of experience. I've worked both as the Head of Engineering at Fabric, leading a team of 6 engineers internationally, and as an individual contributor to the Merchant organization at DoorDash. I also spend part of my time helping other engineers pursue their career goals in my role at InterviewKickstart. Thanks for stopping by!`;
 export const META_DESC: string = `This website!
 React/TypeScript, AWS S3
 

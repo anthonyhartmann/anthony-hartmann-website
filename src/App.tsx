@@ -3,9 +3,11 @@ import NavBar from "./components/NavBar/NavBar";
 import Spacer from "./components/Spacer";
 import LogoCard from "./components/LogoCard/LogoCard";
 import {
+  Button,
   Col,
   Collapse,
   Container,
+  Modal,
   Row,
   Image,
   Card,
@@ -48,6 +50,7 @@ function App() {
   const [collapseIndex, setCollapseIndex] = React.useState<number>(-1);
   const [showToast, setShowToast] = React.useState(false);
   const [toastMsg, setToastMsg] = React.useState("");
+  const [showConfirmDownload, setShowConfirmDownload] = React.useState(false)
 
   const handleOpenCollapse = (
     index: number,
@@ -82,6 +85,22 @@ function App() {
         </Toast>
       </ToastContainer>
       <NavBar />
+      <Modal show={showConfirmDownload} onHide={() => setShowConfirmDownload(false)}>
+      <Modal.Header closeButton>
+          <Modal.Title>Confirm Download</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Would you like to download my resume?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={() => setShowConfirmDownload(false)}>
+            Not now
+          </Button>
+          <Button variant="secondary">
+            <Link to="/files/resume.pdf" target="_blank" download onClick={() => setShowConfirmDownload(false)}>
+              Yes!
+            </Link>
+          </Button>
+        </Modal.Footer>
+        </Modal>
       {/* TODO: find a more BootStrap-thonic way of doing this */}
       <Container fluid style={{ margin: 0, padding: 0 }}>
         <Row className="row justify-content-center">
@@ -305,13 +324,8 @@ function App() {
                 <Linkedin size={96} className="linkedin" />
               </Link>
             </Col>
-            <Col lg={1} className="d-flex justify-content-center" onClick={() => {
-                setToastMsg("Resume Downloaded Successfully")
-                setShowToast(true);
-              }}>
-              <Link to="/files/resume.pdf" target="_blank" download>
-                <FileEarmarkPersonFill size={96} className="resume" />
-              </Link>
+            <Col lg={1} className="d-flex justify-content-center">
+                <FileEarmarkPersonFill size={96} className="resume" onClick={() => setShowConfirmDownload(true)}/>
             </Col>
           </Row>
         </div>
