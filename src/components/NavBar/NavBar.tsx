@@ -21,13 +21,13 @@ const NavBar: React.FC = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="#projects">
-              Projects
+            <a className="nav-link" href="#experience">
+              Experience
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#experience">
-              Experience
+            <a className="nav-link" href="#projects">
+              Projects
             </a>
           </li>
           <li className="nav-item">

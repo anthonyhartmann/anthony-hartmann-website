@@ -10,6 +10,20 @@ type CollapseBlurbProps = {
 };
 
 const CollapseBlurb: React.FC<CollapseBlurbProps> = (props) => {
+  let textElems: any[] = []
+  if (props.blurbText) {
+    const lines = props.blurbText.split('\n').filter((l) => l)
+    textElems = lines.map((line, index) => {
+      if (index == 0) {
+        return <h1>{line}</h1>
+      }
+      else if (line.startsWith("•")) {
+        return <li>{line.slice(2)}</li>
+      } else {
+        return <p className='mt-0'>{line}</p>
+      }
+    })
+  }
   return (
     <Collapse in={props.in} dimension="height">
       <div>
@@ -21,7 +35,7 @@ const CollapseBlurb: React.FC<CollapseBlurbProps> = (props) => {
             </Col>
             <Col md={1} />
             <Col xl={props.wide ? 7 : 3}>
-              <p className="bio-blurb">{props.blurbText}</p>
+              <p className="bio-blurb">{textElems}</p>
             </Col>
             <Spacer size={1} />
           </Row>
