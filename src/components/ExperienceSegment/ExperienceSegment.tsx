@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import Spacer from "../Spacer";
 import {
   DOORDASH_DESC,
   FABRIC_DESC,
@@ -24,28 +23,14 @@ type ExperienceSegmentProps = {
 
 const ExperienceSegment: React.FC<ExperienceSegmentProps> = (props) => {
   return (
-    <div
-      style={{
-        backgroundColor: "#73FAC9",
-        color: "black",
-        paddingBottom: "10em",
-      }}
-    >
-      <Spacer size={1} />
+    <div className="py-5 bg-secondary text-black">
       <Row className="row justify-content-center">
         <Col xl={12}>
-          <h1
-            style={{
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            id="experience"
-          >
+          <h1 id="experience" className="pb-3 text-center fw-bold">
             Experience
           </h1>
         </Col>
       </Row>
-      <Spacer size={1} />
       <Row className="row justify-content-center">
         <Col lg={3}>
           <LogoCard

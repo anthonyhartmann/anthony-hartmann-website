@@ -1,38 +1,8 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Spacer from "./components/Spacer";
-import LogoCard from "./components/LogoCard/LogoCard";
 import BioSegment from "./components/BioSegment/BioSegment";
-import {
-  Button,
-  Col,
-  Container,
-  Modal,
-  Row,
-  Card,
-  Toast,
-  ToastContainer,
-} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  Check,
-  EnvelopeHeart,
-  FileEarmarkPersonFill,
-  Github,
-  Linkedin,
-} from "react-bootstrap-icons";
-import {
-  BIO_BLURB,
-  DOORDASH_DESC,
-  FABRIC_DESC,
-  IK_DESC,
-  MARQETA_DESC,
-  META_DESC,
-  MINDSWARMS_DESC,
-  TAROT_DESC,
-} from "./strings";
-import CollapseBlurb from "./components/CollapseBlurb/CollapseBlurb";
 import ExperienceSegment from "./components/ExperienceSegment/ExperienceSegment";
 import ConfirmDownloadModal from "./components/ConfirmDownloadModal/ConfirmDownloadModal";
 import ProjectsSegment from "./components/ProjectsSegment/ProjectsSegment";
@@ -76,23 +46,20 @@ function App() {
         onHide={() => setShowConfirmDownload(false)}
       />
       {/* TODO: find a more BootStrap-thonic way of doing this */}
-      <Container fluid style={{ margin: 0, padding: 0 }}>
+      <Container fluid className="m-0 p-0">
         <BioSegment />
-        <Spacer size={4} />
         <ExperienceSegment
           handleOpenCollapse={handleOpenCollapse}
           collapseImage={collapseImage}
           collapseText={collapseText}
           collapseIndex={collapseIndex}
         />
-        <Spacer size={2} />
         <ProjectsSegment
           handleOpenCollapse={handleOpenCollapse}
           collapseImage={collapseImage}
           collapseText={collapseText}
           collapseIndex={collapseIndex}
         />
-        <Spacer size={4} />
         <LinksSegment
           resumeOnClick={() => setShowConfirmDownload(true)}
           emailOnClick={emailOnClick}

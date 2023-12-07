@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  font-size: 16px;
-  font-family: "Open Sans";
 }
 
 html {
-  background-color: #73fac9;
+  font-size: 16px;
+  background-color: var(--bs-secondary);
+  font-family: "Open Sans";
 }

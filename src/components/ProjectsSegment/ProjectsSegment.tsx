@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Spacer from "../Spacer";
 import { META_DESC, TAROT_DESC } from "../../strings";
 
 type ProjectsSegmentProps = {
@@ -16,17 +15,12 @@ type ProjectsSegmentProps = {
 
 const ProjectsSegment: React.FC<ProjectsSegmentProps> = (props) => {
   return (
-    <div>
-      <Row>
-        <h1
-          id="projects"
-          className="text-center"
-          style={{ fontWeight: "bold" }}
-        >
+    <div className="py-5">
+      <Row className="pb-4">
+        <h1 id="projects" className="text-center fw-bold">
           Projects
         </h1>
       </Row>
-      <Spacer size={3} />
       <Row className="row justify-content-center">
         <Col lg={3}>
           <Card
@@ -35,13 +29,7 @@ const ProjectsSegment: React.FC<ProjectsSegmentProps> = (props) => {
             }
           >
             <Card.Img variant="top" src="/images/tarot.png" />
-            <Card.Text
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                paddingLeft: "0.5em",
-              }}
-            >
+            <Card.Text className="p-1 text-black bg-white">
               Tarot Tutor (Working Title)
             </Card.Text>
           </Card>
@@ -53,13 +41,7 @@ const ProjectsSegment: React.FC<ProjectsSegmentProps> = (props) => {
             }
           >
             <Card.Img variant="top" src="/images/meta.png" />
-            <Card.Text
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                paddingLeft: "0.5em",
-              }}
-            >
+            <Card.Text className="p-1 text-black bg-white">
               This website!
             </Card.Text>
           </Card>
