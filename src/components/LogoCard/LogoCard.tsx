@@ -1,5 +1,4 @@
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
 import "./LogoCard.css";
 import Card from "react-bootstrap/Card";
 

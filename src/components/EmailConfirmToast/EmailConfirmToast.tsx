@@ -10,22 +10,16 @@ type EmailConfirmToastProps = {
 
 const EmailConfirmToast: React.FC<EmailConfirmToastProps> = (props) => {
   return (
-    <ToastContainer
-      position="top-end"
-      style={{ position: "fixed", margin: "10px" }}
-    >
+    <ToastContainer position="top-end" className="position-fixed m-3">
       <Toast
-        style={{
-          backgroundColor: "mediumseagreen",
-          zIndex: "2",
-        }}
+        className="bg-success z-2"
         onClose={props.onClose}
         show={props.show}
         delay={2000}
         autohide
       >
-        <Toast.Body style={{ fontSize: "1.1em" }}>
-          <Check size={30} color="#076620" style={{ margin: "0 6 2 0" }} />
+        <Toast.Body className="fs-6">
+          <Check size={30} className="text-success-dark mx-1" />
           {props.message}
         </Toast.Body>
       </Toast>

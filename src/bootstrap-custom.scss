@@ -1,10 +1,39 @@
 // change the theme
 $theme-colors: (
   "primary": #122540,
-  "secondary": #73FAC9,
+  "secondary": #73fac9,
   "tertiary": #47434bff,
+  "success": #3cb371,
+  "success-dark": #076620,
 );
 
+$spacer: 2rem;
+
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  2: (
+    $spacer * 0.5,
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5,
+  ),
+  5: (
+    $spacer * 3,
+  ),
+  6: (
+    $spacer * 5,
+  ),
+  7: (
+    $spacer * 7,
+  ),
+  8: (
+    $spacer * 9,
+  ),
+);
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 

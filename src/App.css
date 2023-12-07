@@ -1,16 +1,3 @@
-.bio-blurb {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-#collapse-box {
-  height: 75vh;
-  box-sizing: content-box;
-  background-color: aqua;
-  margin: 0;
-  padding: 0;
-}
-
 .envHeart {
   transition: color 0.5s ease;
   color: white;
@@ -53,6 +40,6 @@
 }
 
 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit;
+  text-decoration: inherit;
 }
